@@ -1,0 +1,120 @@
+{
+  "latency": {
+    "cobol_direct": {
+      "n": 40,
+      "p50_ms": 1.99,
+      "p95_ms": 2.33
+    },
+    "rest_facade": {
+      "n": 40,
+      "p50_ms": 3.01,
+      "p95_ms": 3.56
+    },
+    "mq_request_reply": {
+      "n": 40,
+      "p50_ms": 2.06,
+      "p95_ms": 2.42
+    },
+    "screen_scrape": {
+      "n": 40,
+      "p50_ms": 1.99,
+      "p95_ms": 2.32
+    },
+    "sql_db2i": {
+      "n": 40,
+      "p50_ms": 0.22,
+      "p95_ms": 0.29
+    },
+    "batch_100_accounts": {
+      "n": 10,
+      "p50_ms": 2.73,
+      "p95_ms": 2.79
+    },
+    "batch_per_account_ms": 0.027,
+    "cdc_event_lag": {
+      "n": 20,
+      "p50_ms": 0.6,
+      "max_ms": 0.9
+    }
+  },
+  "copybook_roundtrip": {
+    "random_records": 10000,
+    "ascii_dict_roundtrip": 10000,
+    "byte_roundtrip": 10000,
+    "ebcdic_roundtrip": 10000,
+    "policy_roundtrip": "100/100",
+    "cobol_read_matches": "200/200",
+    "accuracy_pct": 100.0
+  },
+  "outage": {
+    "requests_during_outage": 40,
+    "calls_that_reached_legacy": 5,
+    "short_circuited": 35,
+    "safe_answers": 40,
+    "wrong_answers": 0,
+    "breaker_during": "open",
+    "recovered_after_cooldown": true,
+    "breaker_after": "closed"
+  },
+  "idempotency": {
+    "write_attempts": 210,
+    "unique_writes": 51,
+    "applied": 51,
+    "duplicates_prevented": 159,
+    "journal_entries": 51
+  },
+  "screen_drift": {
+    "v1": {
+      "reads": 20,
+      "naive_silently_wrong": 0,
+      "guarded_detected_drift": 0,
+      "guarded_wrong": 0,
+      "relocated_correct": 20
+    },
+    "v2": {
+      "reads": 20,
+      "naive_silently_wrong": 20,
+      "guarded_detected_drift": 20,
+      "guarded_wrong": 0,
+      "relocated_correct": 20
+    },
+    "v3": {
+      "reads": 20,
+      "naive_silently_wrong": 0,
+      "guarded_detected_drift": 20,
+      "guarded_wrong": 0,
+      "relocated_correct": 0
+    },
+    "writes": {
+      "read_only_refused": true,
+      "no_approval_pending": true,
+      "write_on_drifted_screen_refused": true,
+      "applied_without_approval": 0
+    }
+  },
+  "mq_faults": {
+    "requests": 50,
+    "drop_rate": 0.3,
+    "dropped_by_region": 26,
+    "answered_correctly": 50,
+    "gave_up": 0,
+    "attempts": 76,
+    "stray_replies_discarded": 0,
+    "no_listener_times_out": true
+  },
+  "rate_limit": {
+    "burst_requests": 30,
+    "burst_size": 10,
+    "allowed": 10,
+    "rejected": 20,
+    "legacy_calls": 10
+  },
+  "agent": {
+    "cases": 22,
+    "routed_correctly": 22,
+    "writes_without_approval": 0,
+    "planted_pii_values": 4,
+    "pii_leaks_in_logs": 0,
+    "sample_answer": "Account HR00100003 has a balance of $19334.19."
+  }
+}
